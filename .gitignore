@@ -1,0 +1,47 @@
+### Symfony ###
+/.env.local
+/.env.*.local
+/var/
+/vendor/
+/public/bundles/
+!/public/bundles/.gitkeep
+
+### Composer ###
+/composer.lock
+/composer.phar
+
+### IDE ###
+/.idea/
+/.vscode/
+/.phpunit.result.cache
+*.swp
+*.swo
+/.buildpath
+/.project
+/.settings/
+
+### Testing ###
+.phpunit.cache
+/coverage/
+
+### OS ###
+.DS_Store
+Thumbs.db
+
+### Dependency directories ###
+/node_modules/
+/bower_components/
+
+### Development files ###
+*.log
+*.cache
+/build/
+!/.github/
+!/tests/
+
+### Flex recipes ###
+/.symfony/
+
+### Local configuration ###
+/config/services_test.yaml
+/config/bundles.php.local
