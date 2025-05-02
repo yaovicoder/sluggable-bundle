@@ -1,6 +1,6 @@
 ### Symfony ###
-/.env.local
-/.env.*.local
+.env*
+!.env.example
 /var/
 /vendor/
 /public/bundles/
@@ -40,7 +40,7 @@ Thumbs.db
 !/tests/
 
 ### Flex recipes ###
-/.symfony/
+# /.symfony/
 
 ### Local configuration ###
 /config/services_test.yaml
