@@ -1,0 +1,15 @@
+{
+    "manifests": {
+        "yic/sluggable-bundle": {
+            "manifest": {
+                "bundles": {
+                    "YIC\\SluggableBundle\\YICSluggableBundle": ["all"]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "origin": "yic/sluggable-bundle:1.0"
+        }
+    }
+}
