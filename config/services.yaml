@@ -5,8 +5,8 @@ services:
         autoconfigure: true
 
     YIC\SluggableBundle\:
-        resource: '../../src/*'
-        exclude: '../../src/{Entity,DependencyInjection,Tests}'
+        resource: '../src/*'
+        exclude: '../src/{Entity,DependencyInjection,Tests}'
 
     # Explicitly define the ParamConverter service
     YIC\SluggableBundle\Request\ParamConverter\SluggableParamConverter:

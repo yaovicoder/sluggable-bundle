@@ -11,10 +11,32 @@ class SluggableExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
-        $loader = new YamlFileLoader(
-            $container,
-            new FileLocator(__DIR__.'/../../config')
-        );
-        $loader->load('services.yaml');
+        $configDir = $this->getConfigDirectory();
+        $loader = new YamlFileLoader($container, new FileLocator($configDir));
+        
+        // Load all required config files
+        $this->loadConfigurationFiles($loader, $configDir);
+        
+    }       
+    
+    private function getConfigDirectory(): string
+    {
+        if (is_dir($dir = __DIR__.'/../../config')) {
+            return $dir;
+        }
+    }
+    
+    private function loadConfigurationFiles(YamlFileLoader $loader, string $configDir): void
+    {
+        $files = [
+            'services.yaml',
+            'packages/sensio_framework_extra.yaml',
+        ];
+        
+        foreach ($files as $file) {
+            if (file_exists("$configDir/$file")) {
+                $loader->load($file);
+            }
+        }
     }
 }
